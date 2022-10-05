@@ -11,8 +11,12 @@ app.get('/', (req, res) => {
 });
 
 
-app.get('/quiz1', (req, res) => {
-    res.sendFile(path.join(__dirname, "./public/quiz/quiz1.html"))
+app.get('/game', (req, res) => {
+    res.sendFile(path.join(__dirname, "./public/game/game.html"))
+})
+
+app.get('/gameover', (req, res) => {
+    res.sendFile(path.join(__dirname, "./public/game/gameover.html"))
 })
 
 
