@@ -7,13 +7,12 @@
     <title>Document</title>
 </head>
 <body>
-    <script>
-        let temp = location.href.split("?");
-        let data=temp[1]
-        let wins = data[0]
+    <span>You won </span>
+    <span id="gameover"></span>
+    <span> times</span>
+    <script defer src="/gameovermain"></script>
 
-
-        console.log(data)
-    </script>
+    <p>Do you want to play again? Click this button! 👇</p>
+    <span onclick="goToGame()">PLAY AGAIN ✊✌️🖐</span>
 </body>
 </html>

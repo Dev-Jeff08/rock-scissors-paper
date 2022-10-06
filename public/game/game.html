@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script defer src="/main"></script>
     <title>Document</title>
 </head>
 <body>
@@ -30,8 +31,8 @@
             <p id="computerPick"></p>
         </div>
         <button onclick="userRock()">✊</button>
-        <button>✌️</button>
-        <button>🖐</button>
+        <button onclick="userScissors()">✌️</button>
+        <button onclick="userPaper()">🖐</button>
     </div>
 
     <!--footer-->
@@ -40,68 +41,5 @@
         <span class="bullet point">‧</span>
         <span onclick="playAgain()">play again</span>
     </div>
-
-    <script>
-        let menu = ['rock', 'scissors', 'paper'];
-        let wins = 0;
-
-        document.getElementById('winsCount').innerHTML = wins;
-
-        function userRock() {
-            let winLose = document.getElementById('winLose');
-            let userPick = document.getElementById('userPick');
-            let computerPick = document.getElementById('computerPick');
-            let userChoice = 'rock';
-            let computerChoice = '';
-            let winOrLose = '';
-            let winsCount = document.getElementById('winsCount')
-
-            computerChoice = menu[Math.floor(Math.random() * menu.length)];
-
-            //✊✌️🖐
-            if(computerChoice == "rock") {
-                winOrLose = "draw";
-
-                winLose.innerHTML = ("DRAW");
-                userPick.innerHTML = ("You choose ✊")
-                computerPick.innerHTML = ("Computer choose ✊")
-
-            } else if (computerChoice == "scissors") {
-                winOrLose = "win";
-
-                winLose.innerHTML = ("WIN");
-                userPick.innerHTML = ("You choose ✊")
-                computerPick.innerHTML = ("Computer choose ✌️")
-            } else {
-                winOrLose = "lose";
-
-                winLose.innerHTML = ("LOSE");
-                userPick.innerHTML = ("You choose ✊")
-                computerPick.innerHTML = ("Computer choose 🖐")
-            }
-            if(winOrLose == "win") {
-                wins = wins + 1;
-
-                document.getElementById('winsCount').innerHTML = wins;
-            } else {
-                location.href = "./gameover.html?" + wins
-
-
-                window.location.replace("/gameover")
-            }
-        }
-
-
-
-        function goBackToHome() {
-            window.location.replace('../')
-        }
-
-        function playAgain() {
-            window.location.reload()
-        }
-
-        
-    </script>
 </body>
 </html>
